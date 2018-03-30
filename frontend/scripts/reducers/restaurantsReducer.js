@@ -4,7 +4,7 @@ export const restaurantsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_RESTAURANTS:
-      return action.restaurants;
+      return action.restaurants.restaurants;
     default:
       return state;
   }
