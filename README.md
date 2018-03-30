@@ -1,5 +1,12 @@
 # bottle-rocket-coding-challenge
 
+
+
+Instructions:
+
+Download and run "npm install" to install dependencies and then "npm run start"
+
+
 Use fetch to get the JSON
 Use async/await
 
