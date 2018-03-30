@@ -6,13 +6,14 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
+import MainContainer from './mainContainer';
 
 const App = () => (
     <div>
         <header>
           Lunch Tyme
         </header>
-        <h1>Here</h1>
+        <Route exact path ="/" component={MainContainer} />
     </div>
 );
 
