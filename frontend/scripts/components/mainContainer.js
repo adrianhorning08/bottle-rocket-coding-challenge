@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import Main from './main';
 import { fetchRestaurants } from '../actions/restaurant_actions';
 
+const mapStateToProps = state => {
+  return {
+    restaurants: state.restaurants
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     fetchRestaurants: () => dispatch(fetchRestaurants())
@@ -10,6 +16,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Main);

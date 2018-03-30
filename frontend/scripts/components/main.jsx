@@ -6,7 +6,11 @@ class Main extends React.Component {
   }
 
   render() {
-    return null;
+    if (this.props.restaurants) {
+      return 'hey';
+    } else {
+      return null;
+    }
   }
 }
 
