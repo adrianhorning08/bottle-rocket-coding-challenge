@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   context: __dirname,
   entry: "./frontend/scripts/entry.jsx",
@@ -23,6 +25,7 @@ module.exports = {
     devtool: 'source-maps',
     watch: true,
     devServer: {
+      // contentBase: "./public",
       port: 3000,
       hot: true
     }

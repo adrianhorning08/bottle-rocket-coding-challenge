@@ -10,8 +10,9 @@ import {
 const App = () => (
     <div>
         <header>
-          Welcome to the Node-React skeleton.
+          Lunch Tyme
         </header>
+        <h1>Here</h1>
     </div>
 );
 
