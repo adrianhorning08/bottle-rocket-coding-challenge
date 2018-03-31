@@ -11,8 +11,11 @@ import MainContainer from './mainContainer';
 const App = () => (
     <div>
         <header>
-          <h1>Lunch Tyme</h1>
-          <div className="map-icon"></div>
+          <div className="header-contents">
+            <div className="back-icon"></div>
+            <h1>Lunch Tyme</h1>
+            <div className="map-icon"></div>
+          </div>
         </header>
         <Route exact path ="/" component={MainContainer} />
     </div>
