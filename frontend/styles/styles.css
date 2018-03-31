@@ -5,7 +5,27 @@
     src: url("fonts/AvenirLTStd_Light.otf") format("opentype");
 }
 
-header {
+body {
   font-family: 'Avenir-Roman', sans-serif;
-  font-size: 56px;
+}
+
+header {
+  height: 75px;
+  color: #fff;
+  background:#43E895;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+h1 {
+  font-size: 17px;
+}
+
+.map-icon {
+  background-image: url("./images/icon_map@2x.png");
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  background-size: contain;
 }
