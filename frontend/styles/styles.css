@@ -11,8 +11,22 @@ body {
 
 header {
   height: 75px;
-  color: #fff;
   background:#43E895;
+}
+
+h1, h2, h3 {
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: .7px;
+  color: #fff;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-weight: 400;
 }
 
 .header-contents {
@@ -21,12 +35,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 12px 0 12px;
-}
-
-h1 {
-  font-size: 17px;
-  font-weight: bold;
-  letter-spacing: .7px;
 }
 
 .map-icon {
@@ -45,6 +53,16 @@ h1 {
   visibility: hidden;
 }
 
-.hidden {
+.restaurant-index-item {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
 
+.restaurant-index-item-text {
+  padding: 0 0 6px 12px;
 }
