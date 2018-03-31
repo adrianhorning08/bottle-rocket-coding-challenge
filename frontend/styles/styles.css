@@ -7,6 +7,7 @@
 
 body {
   font-family: 'Avenir-Roman', sans-serif;
+  overflow: hidden;
 }
 
 header {
