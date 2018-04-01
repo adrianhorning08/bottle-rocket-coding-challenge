@@ -14,12 +14,6 @@ class Main extends React.Component {
   }
 
   render() {
-    const drawer = <Drawer
-      width={300}
-      fadeOut={true}
-      open={this.state.open}
-      onChange={open => this.setState({ open: open })}
-      />;
     if (this.props.restaurants.length > 0) {
       const indexItems =  this.props.restaurants.map((restaurant,idx) => {
         return <section
@@ -40,7 +34,20 @@ class Main extends React.Component {
       });
       return (
         <div>
-          {drawer}
+          <Drawer
+            width={"100%"}
+            right={true}
+            fadeOut={true}
+            open={this.state.open}
+            onChange={open => this.setState({ open: !false })}
+          >
+            <div style={{ width: "100%"}}>
+              <h1>Hey</h1>
+            </div>
+            <div style={{ padding: "2em" }}>
+              <h3>Navigation</h3>
+            </div>
+          </Drawer>
           {indexItems}
         </div>
       );
