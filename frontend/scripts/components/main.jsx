@@ -8,7 +8,12 @@ class Main extends React.Component {
     super(props);
     this.state = {
       open: false,
-      restaurant: null
+      restaurant: {
+        location: {
+          lat: null,
+          lng: null
+        }
+      }
     };
     this.handleBackClick = this.handleBackClick.bind(this);
   }
@@ -16,6 +21,8 @@ class Main extends React.Component {
   componentDidMount() {
     this.props.fetchRestaurants();
   }
+
+  // refactor into 1 function
 
   handleRestaurantClick(restaurant, e) {
     this.setState({ open: true, restaurant});
@@ -30,16 +37,27 @@ class Main extends React.Component {
   render() {
     const Map = withScriptjs(withGoogleMap(props =>
       <GoogleMap
-        defaultZoom={8}
-        defaultCenter={{ lat: -34.397, lng: 150.644 }}
+        defaultZoom={15}
+        defaultCenter={{ lat: +this.state.restaurant.location.lat,
+                         lng: +this.state.restaurant.location.lng }}
       >
         <Marker
-          position={{ lat: -34.397, lng: 150.644 }}
+          position={{ lat: +this.state.restaurant.location.lat,
+                      lng: +this.state.restaurant.location.lng }}
         />
       </GoogleMap>
     ));
 
     if (this.props.restaurants.length > 0) {
+
+      let contact = null;
+      if (this.state.restaurant.contact) {
+        contact = <div className="contact">
+          <p>{this.state.restaurant.contact.formattedPhone}</p>
+          <p>@{this.state.restaurant.contact.twitter}</p>
+        </div>;
+      }
+
       const indexItems =  this.props.restaurants.map((restaurant,idx) => {
         return <section
           className="restaurant-index-item"
@@ -79,9 +97,21 @@ class Main extends React.Component {
                 <Map
                   googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuBcjx8q63oAgLk3_4UC0397Kh3d_9LkI"
                   loadingElement={<div style={{ height: `100%` }} />}
-                  containerElement={<div style={{ height: `400px` }} />}
+                  containerElement={<div style={{ height: `160px` }} />}
                   mapElement={<div style={{ height: `100%` }} />}
                 />
+              <div className="restaurant-deail-header">
+                <h2>{this.state.restaurant.name}</h2>
+                <h3>{this.state.restaurant.category}</h3>
+              </div>
+              <div className="restaurant-deail-text">
+                <p>{this.state.restaurant.location.address}</p>
+                <p>{this.state.restaurant.location.city},
+                    {this.state.restaurant.location.state}
+                    {` `}
+                    {this.state.restaurant.location.postalCode}</p>
+                  {contact}
+              </div>
               </div>
             );
           }}

@@ -9,6 +9,11 @@ body {
   font-family: 'Avenir-Roman', sans-serif;
 }
 
+p {
+  font-size: 16px;
+  color: #2A2A2A;
+}
+
 header {
   height: 75px;
   background:#43E895;
@@ -28,6 +33,7 @@ h2 {
 h3 {
   font-family: 'Avenir-Light', sans-serif;
   font-weight: 400;
+  font-size: 12px;
 }
 
 .header-contents {
@@ -82,7 +88,7 @@ h3 {
 }
 
 .drawer {
-  background: #000;
+  background: #fff;
   width: 100%;
   height: 100%;
 }
@@ -92,4 +98,14 @@ h3 {
 }
 #map {
   height: 100%;
+}
+
+.restaurant-deail-header {
+  background: #34B379;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 6px 12px;
 }
