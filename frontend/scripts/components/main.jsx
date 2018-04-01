@@ -5,7 +5,8 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      restaurantName: null
     };
   }
 
@@ -13,13 +14,19 @@ class Main extends React.Component {
     this.props.fetchRestaurants();
   }
 
+  handleClick(restaurant, e) {
+    console.log(restaurant);
+    this.setState({ open: !false});
+  }
+
   render() {
     if (this.props.restaurants.length > 0) {
       const indexItems =  this.props.restaurants.map((restaurant,idx) => {
         return <section
           className="restaurant-index-item"
+          value={restaurant.name}
           key={idx}
-          onClick={() => this.setState({ open: !false})}
+          onClick={this.handleClick.bind(this, restaurant)}
           style={
             {
               backgroundImage: `url("http://res.cloudinary.com/dqw6az5ot/image/upload/v1522533459/cellGradientBackground_2x.png"),
@@ -41,12 +48,19 @@ class Main extends React.Component {
             open={this.state.open}
             onChange={open => this.setState({ open: !false })}
           >
-            <div style={{ width: "100%"}}>
-              <h1>Hey</h1>
-            </div>
-            <div style={{ padding: "2em" }}>
-              <h3>Navigation</h3>
-            </div>
+          {val => {
+            return (
+              <div className="drawer">
+                <header>
+                  <div className="header-contents">
+                    <div className="back-icon"></div>
+                    <h1>Lunch Tyme</h1>
+                    <div className="map-icon"></div>
+                  </div>
+                </header>
+              </div>
+            );
+          }}
           </Drawer>
           {indexItems}
         </div>
