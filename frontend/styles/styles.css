@@ -54,7 +54,7 @@ h3 {
 }
 
 .main-container {
-  max-width: 900px;
+  text-align: center;
 }
 
 .map-icon {
@@ -90,11 +90,9 @@ h3 {
 
 .restaurant-index-item {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   min-height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  display: inline-grid;
   position: relative;
   overflow: auto;
 }
@@ -104,9 +102,12 @@ h3 {
 }
 
 .restaurant-index-item-text {
+  align-self: flex-end;
   padding: 0 0 6px 12px;
   position: absolute;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .drawer {
@@ -139,4 +140,8 @@ h3 {
 
 .contact {
   padding-top: 26px;
+}
+
+@media (min-width: 500px) {
+
 }

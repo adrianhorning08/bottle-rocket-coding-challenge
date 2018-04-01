@@ -87,7 +87,7 @@ class Main extends React.Component {
       }
 
       const indexItems =  this.props.restaurants.map((restaurant,idx) => {
-        return <section
+        return <div
           className="restaurant-index-item"
           value={restaurant.name}
           key={idx}
@@ -100,7 +100,7 @@ class Main extends React.Component {
           <img className="top" src={"http://res.cloudinary.com/dqw6az5ot/image/upload/v1522533459/cellGradientBackground_2x.png"}/>
           <img className="bottom" src={`${restaurant.backgroundImageURL}`}>
           </img>
-        </section>;
+        </div>;
       });
       return (
         <div className="main-container">
