@@ -12,7 +12,7 @@ const App = () => (
     <div>
         <header>
           <div className="header-contents">
-            <div className="back-icon"></div>
+            <div className="dummy-icon"></div>
             <h1>Lunch Tyme</h1>
             <div className="map-icon"></div>
           </div>

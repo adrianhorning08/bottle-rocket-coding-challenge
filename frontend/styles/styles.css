@@ -7,7 +7,6 @@
 
 body {
   font-family: 'Avenir-Roman', sans-serif;
-  overflow: hidden;
 }
 
 header {
@@ -46,13 +45,22 @@ h3 {
   background-size: contain;
 }
 
-.back-icon {
-  background-image: url("./images/ic_webBack@2x.png");
+.dummy-icon {
   width: 50px;
   height: 50px;
+}
+
+#back-icon {
+  background-image: url("./images/ic_webBack@2x.png");
+  width: 25px;
+  height: 25px;
   background-size: contain;
   background-repeat: no-repeat;
   visibility: hidden;
+}
+
+#back-icon:hover {
+  cursor: pointer;
 }
 
 .restaurant-index-item {
@@ -77,4 +85,11 @@ h3 {
   background: #000;
   width: 100%;
   height: 100%;
+}
+
+#map-container {
+  height: 120px;
+}
+#map {
+  height: 120px;
 }
