@@ -50,12 +50,19 @@ class Main extends React.Component {
 
     if (this.props.restaurants.length > 0) {
 
-      let contact = null;
+      let phone = null;
+      let twitter = null;
       if (this.state.restaurant.contact) {
-        contact = <div className="contact">
-          <p>{this.state.restaurant.contact.formattedPhone}</p>
-          <p>@{this.state.restaurant.contact.twitter}</p>
-        </div>;
+        phone =
+          <div className="contact">
+            <p>{this.state.restaurant.contact.formattedPhone}</p>
+          </div>;
+          if (this.state.restaurant.contact.twitter) {
+            twitter =
+            <div className="contact">
+              <p>@{this.state.restaurant.contact.twitter}</p>
+            </div>;
+          }
       }
 
       const indexItems =  this.props.restaurants.map((restaurant,idx) => {
@@ -105,13 +112,16 @@ class Main extends React.Component {
                 <h3>{this.state.restaurant.category}</h3>
               </div>
               <div className="restaurant-deail-text">
-                <p>{this.state.restaurant.location.address}</p>
-                <p>{this.state.restaurant.location.city},
-                    {this.state.restaurant.location.state}
-                    {` `}
-                    {this.state.restaurant.location.postalCode}</p>
-                  {contact}
-              </div>
+                <div className="address">
+                  <p>{this.state.restaurant.location.address}</p>
+                  <p>{this.state.restaurant.location.city},
+                      {this.state.restaurant.location.state}
+                      {` `}
+                      {this.state.restaurant.location.postalCode}</p>
+                  </div>
+                    {phone}
+                    {twitter}
+                </div>
               </div>
             );
           }}
