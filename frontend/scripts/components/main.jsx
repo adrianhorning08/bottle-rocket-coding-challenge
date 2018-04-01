@@ -1,6 +1,7 @@
 import React from 'react';
 import Drawer from 'react-motion-drawer';
-import Map from './Map';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+
 
 class Main extends React.Component {
   constructor(props) {
@@ -27,6 +28,17 @@ class Main extends React.Component {
   }
 
   render() {
+    const Map = withScriptjs(withGoogleMap(props =>
+      <GoogleMap
+        defaultZoom={8}
+        defaultCenter={{ lat: -34.397, lng: 150.644 }}
+      >
+        <Marker
+          position={{ lat: -34.397, lng: 150.644 }}
+        />
+      </GoogleMap>
+    ));
+
     if (this.props.restaurants.length > 0) {
       const indexItems =  this.props.restaurants.map((restaurant,idx) => {
         return <section
@@ -65,9 +77,11 @@ class Main extends React.Component {
                   </div>
                 </header>
                 <Map
-                  containerElement={<div id="map-container"></div>}
-                  mapElement={<div id="map"></div>}
-                  />
+                  googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuBcjx8q63oAgLk3_4UC0397Kh3d_9LkI"
+                  loadingElement={<div style={{ height: `100%` }} />}
+                  containerElement={<div style={{ height: `400px` }} />}
+                  mapElement={<div style={{ height: `100%` }} />}
+                />
               </div>
             );
           }}
