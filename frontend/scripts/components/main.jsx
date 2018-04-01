@@ -92,20 +92,18 @@ class Main extends React.Component {
           value={restaurant.name}
           key={idx}
           onClick={this.handleRestaurantClick.bind(this, restaurant)}
-          style={
-            {
-              backgroundImage: `url("http://res.cloudinary.com/dqw6az5ot/image/upload/v1522533459/cellGradientBackground_2x.png"),
-              url(${restaurant.backgroundImageURL})`
-            }
-          }>
+          >
           <div className="restaurant-index-item-text">
             <h2>{restaurant.name}</h2>
             <h3>{restaurant.category}</h3>
           </div>
+          <img className="top" src={"http://res.cloudinary.com/dqw6az5ot/image/upload/v1522533459/cellGradientBackground_2x.png"}/>
+          <img className="bottom" src={`${restaurant.backgroundImageURL}`}>
+          </img>
         </section>;
       });
       return (
-        <div>
+        <div className="main-container">
           <Drawer
             width={"100%"}
             right={true}
@@ -117,9 +115,13 @@ class Main extends React.Component {
               <div className="drawer">
                 <header>
                   <div className="header-contents">
-                    <div id="back-icon" onClick={this.handleBackClick}></div>
+                    <div className="back-icon" onClick={this.handleBackClick}>
+                      <img src="http://res.cloudinary.com/dqw6az5ot/image/upload/v1522614909/ic_webBack_2x.png"></img>
+                    </div>
                     <h1>Lunch Tyme</h1>
-                    <div className="map-icon"></div>
+                    <div className="map-icon">
+                      <img src="http://res.cloudinary.com/dqw6az5ot/image/upload/v1522614719/icon_map_2x.png"></img>
+                    </div>
                   </div>
                 </header>
                 <Map

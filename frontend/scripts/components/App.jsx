@@ -14,7 +14,9 @@ const App = () => (
           <div className="header-contents">
             <div className="dummy-icon"></div>
             <h1>Lunch Tyme</h1>
-            <div className="map-icon"></div>
+            <div className="map-icon">
+              <img src="http://res.cloudinary.com/dqw6az5ot/image/upload/v1522614719/icon_map_2x.png"></img>
+            </div>
           </div>
         </header>
         <Route exact path ="/" component={MainContainer} />
