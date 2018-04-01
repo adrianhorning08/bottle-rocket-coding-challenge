@@ -1,12 +1,13 @@
 import React from 'react';
 import Drawer from 'react-motion-drawer';
+import { compose, withProps, withStateHandlers } from 'recompose';
 import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
+  InfoWindow
 } from "react-google-maps";
-
 
 class Main extends React.Component {
   constructor(props) {
@@ -36,18 +37,33 @@ class Main extends React.Component {
   }
 
   render() {
-    const Map = withScriptjs(withGoogleMap(props =>
+    const Map = compose(
+      withStateHandlers(() => ({
+        isOpen: false,
+      }), {
+        onToggleOpen: ({ isOpen }) => () => ({
+          isOpen: !isOpen,
+        })
+      }),
+      withScriptjs,
+      withGoogleMap
+    )(props =>
       <GoogleMap
         defaultZoom={15}
-        defaultCenter={{ lat: +this.state.restaurant.location.lat,
-                         lng: +this.state.restaurant.location.lng }}
+        defaultCenter={{ lat: Number(this.state.restaurant.location.lat),
+                         lng: Number(this.state.restaurant.location.lng)}}
       >
         <Marker
-          position={{ lat: +this.state.restaurant.location.lat,
-                      lng: +this.state.restaurant.location.lng }}
-        />
+          position={{ lat: Number(this.state.restaurant.location.lat),
+                      lng: Number(this.state.restaurant.location.lng)}}
+          onClick={props.onToggleOpen}
+        >
+          {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
+            <div>hey</div>
+          </InfoWindow>}
+        </Marker>
       </GoogleMap>
-    ));
+    );
 
     if (this.props.restaurants.length > 0) {
 
