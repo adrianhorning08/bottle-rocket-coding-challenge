@@ -1,6 +1,11 @@
 import React from 'react';
 import Drawer from 'react-motion-drawer';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker
+} from "react-google-maps";
 
 
 class Main extends React.Component {
@@ -22,16 +27,12 @@ class Main extends React.Component {
     this.props.fetchRestaurants();
   }
 
-  // refactor into 1 function
-
   handleRestaurantClick(restaurant, e) {
     this.setState({ open: true, restaurant});
-    document.getElementById('back-icon').style.visibility = "visible";
   }
 
   handleBackClick() {
     this.setState({ open: false});
-    document.getElementById('back-icon').style.visibility = "hidden";
   }
 
   render() {
