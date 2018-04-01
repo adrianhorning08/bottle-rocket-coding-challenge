@@ -59,7 +59,11 @@ class Main extends React.Component {
           onClick={props.onToggleOpen}
         >
           {props.isOpen && <InfoWindow onCloseClick={props.onToggleOpen}>
-            <div>hey</div>
+            <div className="info-box">
+              {this.state.restaurant.location.formattedAddress.map((address,idx) => {
+                return <p key={idx}>{address}</p>;
+              })}
+            </div>
           </InfoWindow>}
         </Marker>
       </GoogleMap>
