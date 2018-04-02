@@ -58,8 +58,6 @@ h3 {
   justify-content: center;
 }
 .main-container {
-  position: absolute;
-  right: 0;
   max-width: 900px;
 }
 
@@ -88,11 +86,12 @@ h3 {
   top: 0;
   left: 0;
   z-index: 1;
+  height: auto;
 }
 
 .restaurant-index-item {
   width: 100%;
-  max-width: 400px;
+  min-width: 300px;
   min-height: 180px;
   position: relative;
   overflow: auto;
@@ -105,11 +104,14 @@ h3 {
 }
 
 .restaurant-index-item-text {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  bottom: 0;
+  -webkit-align-self: flex-end; /* Safari */
   align-self: flex-end;
   padding: 0 0 6px 12px;
   position: absolute;
   z-index: 2;
-  display: flex;
   flex-direction: column;
 }
 
@@ -160,9 +162,31 @@ h3 {
   padding-top: 26px;
 }
 
+@media (min-width: 400px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .main-container {
+    width: 400px;
+  }
+
+  .restaurant-index-item {
+    width: 400px;
+  }
+}
+
 @media (min-width: 900px) {
   h1 {
     font-size: 24px;
+  }
+
+  .main-container {
+    width: 900px;
+  }
+
+  .restaurant-index-item {
+    width: 450px;
   }
 
   .detail-header-contents {
