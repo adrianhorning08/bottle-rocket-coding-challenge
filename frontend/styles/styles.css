@@ -53,15 +53,14 @@ h3 {
   max-width: 900px;
 }
 
-.main-main {
+.main {
   display: flex;
   justify-content: center;
 }
 .main-container {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
-  width: 900px;
+  position: absolute;
+  right: 0;
+  max-width: 900px;
 }
 
 .map-icon {
@@ -90,7 +89,6 @@ h3 {
   left: 0;
   z-index: 1;
 }
-
 
 .restaurant-index-item {
   width: 100%;
@@ -129,25 +127,50 @@ h3 {
   height: 100%;
 }
 
-.restaurant-deail-header {
+.restaurant-detail-header {
   background: #34B379;
   height: 60px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 0 0 6px 12px;
 }
 
-.restaurant-deail-text {
+.detail-header-contents {
+  width: 100%;
+}
+
+.restaurant-detail-text {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 16px 0 0 12px;
+}
+
+.detail-text-contents {
+  width: 100%;
 }
 
 .contact {
   padding-top: 26px;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
+  h1 {
+    font-size: 24px;
+  }
 
+  .detail-header-contents {
+    width: 900px;
+  }
+
+  .detail-text-contents  {
+    width: 900px;
+  }
 
 }

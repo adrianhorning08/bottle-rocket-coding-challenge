@@ -102,7 +102,7 @@ class Main extends React.Component {
         </div>;
       });
       return (
-        <div className="main-main">
+        <div className="main">
         <div className="main-container">
           <Drawer
             width={"100%"}
@@ -130,20 +130,24 @@ class Main extends React.Component {
                   containerElement={<div style={{ height: `160px` }} />}
                   mapElement={<div style={{ height: `100%` }} />}
                 />
-              <div className="restaurant-deail-header">
-                <h2>{this.state.restaurant.name}</h2>
-                <h3>{this.state.restaurant.category}</h3>
+              <div className="restaurant-detail-header">
+                <div className="detail-header-contents">
+                  <h2>{this.state.restaurant.name}</h2>
+                  <h3>{this.state.restaurant.category}</h3>
+                </div>
               </div>
-              <div className="restaurant-deail-text">
-                <div className="address">
-                  <p>{this.state.restaurant.location.address}</p>
-                  <p>{this.state.restaurant.location.city},
-                      {this.state.restaurant.location.state}
-                      {` `}
-                      {this.state.restaurant.location.postalCode}</p>
+              <div className="restaurant-detail-text">
+                <div className="detail-text-contents">
+                  <div className="address">
+                    <p>{this.state.restaurant.location.address}</p>
+                    <p>{this.state.restaurant.location.city},
+                        {this.state.restaurant.location.state}
+                        {` `}
+                        {this.state.restaurant.location.postalCode}</p>
+                    </div>
+                      {phone}
+                      {twitter}
                   </div>
-                    {phone}
-                    {twitter}
                 </div>
               </div>
             );
