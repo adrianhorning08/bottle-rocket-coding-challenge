@@ -98,11 +98,11 @@ class Main extends React.Component {
             <h3>{restaurant.category}</h3>
           </div>
           <img className="top" src={"http://res.cloudinary.com/dqw6az5ot/image/upload/v1522533459/cellGradientBackground_2x.png"}/>
-          <img className="bottom" src={`${restaurant.backgroundImageURL}`}>
-          </img>
+          <img className="bottom" src={`${restaurant.backgroundImageURL}`}/>
         </div>;
       });
       return (
+        <div className="main-main">
         <div className="main-container">
           <Drawer
             width={"100%"}
@@ -151,6 +151,7 @@ class Main extends React.Component {
           </Drawer>
           {indexItems}
         </div>
+      </div>
       );
     } else {
       return null;
