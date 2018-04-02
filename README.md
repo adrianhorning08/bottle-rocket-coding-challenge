@@ -2,6 +2,17 @@
 
 Instructions:
 
-Download and run "npm install" to install dependencies and then "npm run start"
+1. Clone repo
+2. Run `npm install` to install dependencies
+3. Run `npm run start` to start webpack-dev-server
+4. Navigate to [browser](http://localhost:3000)
+5. Enjoy!
 
-* I downloaded the font for free online I think they may have some built in padding, so it may be a little off
+* I downloaded the font for free online
+
+## Technologies Used
+* Webpack
+* React/Redux
+* Vanilla CSS
+* react-motion-drawer (for drawer animation)
+* react-google-maps (for google maps)
