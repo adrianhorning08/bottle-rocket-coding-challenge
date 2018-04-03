@@ -1,5 +1,5 @@
 # bottle-rocket-coding-challenge
-
+(designed for chrome and safari)
 Instructions:
 
 1. Clone repo
